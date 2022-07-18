@@ -22,7 +22,7 @@ func bootServer() (err error) {
 	http.Handle("/", handlers.RootNavigator(fs))
 	logger.Info(fmt.Sprintf("Server starting on port %s", port))
 
-	return http.ListenAndServe(port, nil)
+	return http.ListenAndServe(":"+port, nil)
 }
 
 func main() {
